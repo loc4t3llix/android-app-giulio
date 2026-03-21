@@ -37,12 +37,14 @@ Puoi ottenere l'APK anche senza Android Studio usando GitHub Actions.
 5. Al termine apri il run completato e scarica l'artifact `app-debug-apk`.
 6. Dentro l'artifact trovi `app-debug.apk`.
 
-## Build Release APK con GitHub
+## Pubblicare anche su GitHub Releases
 
-E disponibile anche il workflow manuale `Build Release APK`.
+Usa lo stesso workflow `Build Android APK` in modalita manuale:
 
-1. Vai su Actions e avvia `Build Release APK`.
-2. Al termine il workflow carica l'artifact `app-release-unsigned-apk`.
+1. Vai su Actions e avvia `Build Android APK`.
+2. Imposta input `publish_release` su `true`.
+3. Il workflow builda l'APK debug, carica l'artifact `app-debug-apk` e pubblica lo stesso file anche in `Releases`.
+4. Ogni run crea una release con tag `apk-<run_id>`.
 
 ## Note
 
