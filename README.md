@@ -50,3 +50,16 @@ Usa lo stesso workflow `Build Android APK` in modalita manuale:
 
 - L'app legge solo eventi `all-day`.
 - Se entrambi gli eventi sono presenti nello stesso giorno, ha priorita `EVENTO_A`.
+
+## Sicurezza Firebase
+
+`app/google-services.json` contiene credenziali/proprieta di progetto e non deve essere pubblico.
+
+1. Il file e ignorato da Git (`.gitignore`).
+2. In CI (GitHub Actions) il file viene creato dal secret `GOOGLE_SERVICES_JSON`.
+
+Configura il secret in GitHub:
+
+1. Repository -> Settings -> Secrets and variables -> Actions.
+2. Crea il secret `GOOGLE_SERVICES_JSON`.
+3. Incolla il contenuto completo del tuo `google-services.json`.

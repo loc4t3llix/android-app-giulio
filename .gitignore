@@ -1,0 +1,8 @@
+.gradle/
+build/
+**/build/
+local.properties
+
+# Firebase config must not be committed to public repositories.
+app/google-services.json
+
