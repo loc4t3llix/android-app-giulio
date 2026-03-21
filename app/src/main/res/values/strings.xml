@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Calendar Day Widget</string>
     <string name="app_title">Widget Calendario Giornaliero</string>
-    <string name="app_description">Configura i titoli EVENTO_A e EVENTO_B nel codice del widget. Il colore del quadrato cambia in base all'evento all-day di oggi.</string>
+    <string name="app_description">Configura i titoli EVENTO_A e EVENTO_B nel codice del widget. Il colore del quadrato cambia in base all&apos;evento all-day di oggi.</string>
     <string name="permission_granted">Permesso calendario: CONCESSO</string>
     <string name="permission_missing">Permesso calendario: MANCANTE (necessario per leggere gli eventi)</string>
     <string name="grant_permission">Concedi permesso calendario</string>
