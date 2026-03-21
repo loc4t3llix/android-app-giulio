@@ -26,6 +26,17 @@ Apri `CalendarStatusWidgetProvider.kt` e modifica:
 3. Concedi il permesso calendario dalla schermata principale.
 4. Aggiungi il widget "Calendar Day Widget" alla home.
 
+## Build APK con GitHub
+
+Puoi ottenere l'APK anche senza Android Studio usando GitHub Actions.
+
+1. Crea un repository GitHub e carica questo progetto.
+2. Verifica che il branch si chiami `main` o `master`.
+3. Apri la tab Actions nel repository.
+4. Esegui il workflow `Build Android APK` (oppure fai push su `main`/`master`).
+5. Al termine apri il run completato e scarica l'artifact `app-debug-apk`.
+6. Dentro l'artifact trovi `app-debug.apk`.
+
 ## Note
 
 - L'app legge solo eventi `all-day`.
