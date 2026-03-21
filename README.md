@@ -2,13 +2,13 @@
 
 Questa app legge il calendario del telefono e controlla se oggi esistono eventi **all-day** con titolo:
 
-- `EVENTO_A`
-- `EVENTO_B`
+- `MAMMA` (Evento A)
+- `PAPI` (Evento B)
 
 In base al risultato aggiorna un widget quadrato con colore pieno:
 
-- `EVENTO_A` -> rosa
-- `EVENTO_B` -> azzurro
+- `MAMMA` (Evento A) -> rosa
+- `PAPI` (Evento B) -> azzurro
 - nessun evento -> trasparente
 - nessun permesso calendario -> grigio scuro
 
