@@ -5,8 +5,8 @@ Questa app legge il calendario del telefono e controlla se oggi esistono eventi 
 - `EVENTO_B`
 
 In base al risultato aggiorna un widget quadrato con colore pieno:
-- `EVENTO_A` -> verde
-- `EVENTO_B` -> rosso
+- `EVENTO_A` -> rosa
+- `EVENTO_B` -> azzurro
 - nessun evento -> grigio
 - nessun permesso calendario -> grigio scuro
 
