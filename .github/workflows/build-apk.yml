@@ -60,9 +60,7 @@ jobs:
             echo "Missing secret GOOGLE_SERVICES_JSON." >&2
             exit 1
           fi
-          cat > app/google-services.json <<'JSON'
-          $GOOGLE_SERVICES_JSON
-          JSON
+          printf '%s' "$GOOGLE_SERVICES_JSON" > app/google-services.json
 
       - name: Build debug APK
         run: gradle :app:assembleDebug --stacktrace --warning-mode all
