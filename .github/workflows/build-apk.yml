@@ -53,18 +53,16 @@ jobs:
         run: gradle --version
 
       - name: Create google-services.json from secret
-        if: ${{ secrets.GOOGLE_SERVICES_JSON != '' }}
+        env:
+          GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
         run: |
-          cat > app/google-services.json <<'JSON'
-          ${{ secrets.GOOGLE_SERVICES_JSON }}
-          JSON
-
-      - name: Validate google-services.json presence
-        run: |
-          if [ ! -f app/google-services.json ]; then
-            echo "Missing app/google-services.json. Add local file for local builds or set GitHub secret GOOGLE_SERVICES_JSON for CI." >&2
+          if [ -z "$GOOGLE_SERVICES_JSON" ]; then
+            echo "Missing secret GOOGLE_SERVICES_JSON." >&2
             exit 1
           fi
+          cat > app/google-services.json <<'JSON'
+          $GOOGLE_SERVICES_JSON
+          JSON
 
       - name: Build debug APK
         run: gradle :app:assembleDebug --stacktrace --warning-mode all
