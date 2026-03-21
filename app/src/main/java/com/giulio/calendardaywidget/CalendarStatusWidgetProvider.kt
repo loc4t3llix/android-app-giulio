@@ -4,6 +4,7 @@ import android.Manifest
 import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
+import android.content.ContentUris
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
@@ -105,8 +106,8 @@ private object CalendarTodayReader {
         val endOfDay = nowDate.plusDays(1).atStartOfDay(zone).toInstant().toEpochMilli()
 
         val builder = CalendarContract.Instances.CONTENT_URI.buildUpon()
-        CalendarContract.Instances.appendId(builder, startOfDay)
-        CalendarContract.Instances.appendId(builder, endOfDay)
+        ContentUris.appendId(builder, startOfDay)
+        ContentUris.appendId(builder, endOfDay)
 
         val projection = arrayOf(
             CalendarContract.Instances.TITLE,
