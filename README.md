@@ -42,15 +42,7 @@ Puoi ottenere l'APK anche senza Android Studio usando GitHub Actions.
 E disponibile anche il workflow manuale `Build Release APK`.
 
 1. Vai su Actions e avvia `Build Release APK`.
-2. Se non configuri i secret di firma, il workflow carica `app-release-unsigned-apk`.
-3. Se configuri i secret, il workflow firma l'APK e carica `app-release-signed-apk`.
-
-Secret richiesti per la firma (Repository Settings -> Secrets and variables -> Actions):
-
-- `SIGNING_KEYSTORE_BASE64` (keystore `.jks` codificato in base64)
-- `SIGNING_STORE_PASSWORD`
-- `SIGNING_KEY_ALIAS`
-- `SIGNING_KEY_PASSWORD`
+2. Al termine il workflow carica l'artifact `app-release-unsigned-apk`.
 
 ## Note
 
