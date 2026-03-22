@@ -51,7 +51,7 @@ Usa lo stesso workflow `Build Android APK` in modalita manuale:
 ## Note
 
 - L'app legge solo eventi `all-day`.
-- Se entrambi gli eventi sono presenti nello stesso giorno, ha priorita Evento A.
+- Se entrambi gli eventi sono presenti nello stesso giorno, ha priorità Evento A.
 
 ## Sicurezza Firebase
 
