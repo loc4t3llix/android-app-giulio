@@ -1,23 +1,25 @@
 # Calendar Day Widget (Android)
 
-Questa app legge il calendario del telefono e controlla se oggi esistono eventi **all-day** con titolo:
+Questa app legge il calendario del telefono e controlla se oggi esistono eventi **all-day** con titolo configurabile dall'utente per:
 
-- `MAMMA` (Evento A)
-- `PAPI` (Evento B)
+- Evento A
+- Evento B
 
-In base al risultato aggiorna un widget quadrato con colore pieno:
+In base al risultato aggiorna un widget quadrato con colore pieno configurabile dall'utente:
 
-- `MAMMA` (Evento A) -> rosa
-- `PAPI` (Evento B) -> azzurro
-- nessun evento -> trasparente
-- nessun permesso calendario -> grigio scuro
+- Evento A -> colore scelto dall'utente
+- Evento B -> colore scelto dall'utente
+- nessun evento -> colore scelto dall'utente
+- nessun permesso calendario -> colore scelto dall'utente
 
-## Come configurare i titoli evento
+## Come configurare eventi e colori
 
-Apri `CalendarStatusWidgetProvider.kt` e modifica:
+Apri l'app e dalla schermata principale:
 
-- `EVENT_A_TITLE`
-- `EVENT_B_TITLE`
+1. Inserisci i nomi di Evento A e Evento B.
+2. Premi **Salva impostazioni**.
+3. Usa i pulsanti colore per aprire il selettore interattivo (Hue/Saturazione/Luminosità).
+4. Salva il colore desiderato: il widget si aggiorna subito.
 
 ## Uso
 
@@ -49,7 +51,7 @@ Usa lo stesso workflow `Build Android APK` in modalita manuale:
 ## Note
 
 - L'app legge solo eventi `all-day`.
-- Se entrambi gli eventi sono presenti nello stesso giorno, ha priorita `EVENTO_A`.
+- Se entrambi gli eventi sono presenti nello stesso giorno, ha priorità Evento A.
 
 ## Sicurezza Firebase
 
