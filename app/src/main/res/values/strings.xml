@@ -2,9 +2,32 @@
 <resources>
     <string name="app_name">Calendar Day Widget</string>
     <string name="app_title">Widget Calendario Giornaliero</string>
-    <string name="app_description">Configura i titoli EVENTO_A e EVENTO_B nel codice del widget. Il colore del quadrato cambia in base all evento giornaliero di oggi.</string>
+    <string name="app_description">Scegli direttamente da questa schermata i nomi degli eventi e i colori del widget.</string>
+    <string name="default_event_a_title">MAMMA</string>
+    <string name="default_event_b_title">PAPI</string>
     <string name="permission_granted">Permesso calendario: CONCESSO</string>
     <string name="permission_missing">Permesso calendario: MANCANTE (necessario per leggere gli eventi)</string>
     <string name="grant_permission">Concedi permesso calendario</string>
     <string name="refresh_widget">Aggiorna widget ora</string>
+    <string name="event_titles_label">Nomi eventi da cercare</string>
+    <string name="event_a_title_hint">Nome evento A</string>
+    <string name="event_b_title_hint">Nome evento B</string>
+    <string name="save_settings">Salva impostazioni</string>
+    <string name="colors_label">Colori widget</string>
+    <string name="event_a_color_button">Colore evento A</string>
+    <string name="event_b_color_button">Colore evento B</string>
+    <string name="no_event_color_button">Colore nessun evento</string>
+    <string name="no_permission_color_button">Colore senza permesso</string>
+    <string name="event_a_color_preview_desc">Anteprima colore evento A</string>
+    <string name="event_b_color_preview_desc">Anteprima colore evento B</string>
+    <string name="no_event_color_preview_desc">Anteprima colore nessun evento</string>
+    <string name="no_permission_color_preview_desc">Anteprima colore senza permesso</string>
+    <string name="select_color">Selettore colore</string>
+    <string name="save">Salva</string>
+    <string name="selected_color_value">Colore selezionato: %1$s</string>
+    <string name="color_picker_preview_desc">Anteprima colore selezionato</string>
+    <string name="hue_label">Tonalità (Hue)</string>
+    <string name="saturation_label">Saturazione</string>
+    <string name="value_label">Luminosità</string>
+    <string name="alpha_label">Trasparenza (Alpha)</string>
 </resources>

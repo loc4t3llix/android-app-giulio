@@ -4,8 +4,8 @@ import android.Manifest
 import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
-import android.content.ContentUris
 import android.content.ComponentName
+import android.content.ContentUris
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -42,8 +42,6 @@ class CalendarStatusWidgetProvider : AppWidgetProvider() {
     }
 
     companion object {
-        private const val EVENT_A_TITLE = "MAMMA"
-        private const val EVENT_B_TITLE = "PAPI"
 
         fun updateAllWidgets(context: Context) {
             val manager = AppWidgetManager.getInstance(context)
@@ -60,13 +58,18 @@ class CalendarStatusWidgetProvider : AppWidgetProvider() {
             widgetId: Int
         ) {
             val views = RemoteViews(context.packageName, R.layout.widget_calendar_status)
-            val state = CalendarTodayReader.readTodayState(context, EVENT_A_TITLE, EVENT_B_TITLE)
+            val widgetPreferences = WidgetPreferences(context)
+            val state = CalendarTodayReader.readTodayState(
+                context,
+                widgetPreferences.getEventATitle(),
+                widgetPreferences.getEventBTitle()
+            )
 
             val color = when (state) {
-                TodayState.EVENT_A -> ContextCompat.getColor(context, R.color.event_a_color)
-                TodayState.EVENT_B -> ContextCompat.getColor(context, R.color.event_b_color)
-                TodayState.NO_PERMISSION -> ContextCompat.getColor(context, R.color.no_permission_color)
-                TodayState.NONE -> ContextCompat.getColor(context, R.color.no_event_color)
+                TodayState.EVENT_A -> widgetPreferences.getEventAColor()
+                TodayState.EVENT_B -> widgetPreferences.getEventBColor()
+                TodayState.NO_PERMISSION -> widgetPreferences.getNoPermissionColor()
+                TodayState.NONE -> widgetPreferences.getNoEventColor()
             }
 
             views.setInt(R.id.widget_root, "setBackgroundColor", color)
