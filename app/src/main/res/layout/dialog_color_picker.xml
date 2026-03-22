@@ -9,7 +9,8 @@
         android:id="@+id/color_picker_preview"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:background="@android:color/black" />
+        android:background="@android:color/black"
+        android:contentDescription="@string/color_picker_preview_desc" />
 
     <TextView
         android:id="@+id/color_hex_text"
@@ -27,7 +28,8 @@
     <SeekBar
         android:id="@+id/hue_seekbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/hue_label" />
 
     <TextView
         android:layout_width="match_parent"
@@ -38,7 +40,8 @@
     <SeekBar
         android:id="@+id/saturation_seekbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/saturation_label" />
 
     <TextView
         android:layout_width="match_parent"
@@ -49,6 +52,7 @@
     <SeekBar
         android:id="@+id/value_seekbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/value_label" />
 
 </LinearLayout>

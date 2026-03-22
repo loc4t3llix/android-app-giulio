@@ -45,19 +45,33 @@
             android:text="@string/event_titles_label"
             android:textStyle="bold" />
 
+        <TextView
+            android:id="@+id/event_a_title_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:labelFor="@id/event_a_title_input"
+            android:text="@string/event_a_title_hint" />
+
         <EditText
             android:id="@+id/event_a_title_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:hint="@string/event_a_title_hint"
             android:inputType="text" />
+
+        <TextView
+            android:id="@+id/event_b_title_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:labelFor="@id/event_b_title_input"
+            android:text="@string/event_b_title_hint" />
 
         <EditText
             android:id="@+id/event_b_title_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:hint="@string/event_b_title_hint"
             android:inputType="text" />
 
@@ -87,7 +101,8 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_marginEnd="8dp"
-                android:background="@color/event_a_color" />
+                android:background="@color/event_a_color"
+                android:contentDescription="@string/event_a_color_preview_desc" />
 
             <Button
                 android:id="@+id/event_a_color_button"
@@ -109,7 +124,8 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_marginEnd="8dp"
-                android:background="@color/event_b_color" />
+                android:background="@color/event_b_color"
+                android:contentDescription="@string/event_b_color_preview_desc" />
 
             <Button
                 android:id="@+id/event_b_color_button"
@@ -131,7 +147,8 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_marginEnd="8dp"
-                android:background="@color/no_event_color" />
+                android:background="@color/no_event_color"
+                android:contentDescription="@string/no_event_color_preview_desc" />
 
             <Button
                 android:id="@+id/no_event_color_button"
@@ -153,7 +170,8 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_marginEnd="8dp"
-                android:background="@color/no_permission_color" />
+                android:background="@color/no_permission_color"
+                android:contentDescription="@string/no_permission_color_preview_desc" />
 
             <Button
                 android:id="@+id/no_permission_color_button"

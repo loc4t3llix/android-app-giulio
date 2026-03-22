@@ -140,21 +140,28 @@ class MainActivity : AppCompatActivity() {
         saturationSeekBar.progress = (hsv[1] * 100).toInt()
         valueSeekBar.progress = (hsv[2] * 100).toInt()
 
-        val updatePreview = {
-            val selectedColor = Color.HSVToColor(
+        fun getSelectedColor(): Int {
+            return Color.HSVToColor(
                 floatArrayOf(
                     hueSeekBar.progress.toFloat(),
                     saturationSeekBar.progress / 100f,
                     valueSeekBar.progress / 100f
                 )
             )
+        }
+
+        val updateColorPreview = {
+            val selectedColor = getSelectedColor()
             colorPreview.setBackgroundColor(selectedColor)
-            colorHexText.text = getString(R.string.selected_color_value, formatColor(selectedColor))
+            colorHexText.text = getString(
+                R.string.selected_color_value,
+                formatColorWithAlpha(selectedColor)
+            )
         }
 
         val listener = object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                updatePreview()
+                updateColorPreview()
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) = Unit
@@ -166,26 +173,19 @@ class MainActivity : AppCompatActivity() {
         saturationSeekBar.setOnSeekBarChangeListener(listener)
         valueSeekBar.setOnSeekBarChangeListener(listener)
 
-        updatePreview()
+        updateColorPreview()
 
         AlertDialog.Builder(this)
             .setTitle(R.string.select_color)
             .setView(pickerView)
             .setPositiveButton(R.string.save) { _, _ ->
-                val selectedColor = Color.HSVToColor(
-                    floatArrayOf(
-                        hueSeekBar.progress.toFloat(),
-                        saturationSeekBar.progress / 100f,
-                        valueSeekBar.progress / 100f
-                    )
-                )
-                onColorSelected(selectedColor)
+                onColorSelected(getSelectedColor())
             }
             .setNegativeButton(android.R.string.cancel, null)
             .show()
     }
 
-    private fun formatColor(color: Int): String {
+    private fun formatColorWithAlpha(color: Int): String {
         return String.format("#%08X", color)
     }
 
