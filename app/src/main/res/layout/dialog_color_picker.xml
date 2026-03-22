@@ -55,4 +55,16 @@
         android:layout_height="wrap_content"
         android:contentDescription="@string/value_label" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/alpha_label" />
+
+    <SeekBar
+        android:id="@+id/alpha_seekbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/alpha_label" />
+
 </LinearLayout>

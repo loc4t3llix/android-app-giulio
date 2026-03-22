@@ -14,6 +14,7 @@ import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import kotlin.math.roundToInt
 
 class MainActivity : AppCompatActivity() {
 
@@ -126,22 +127,28 @@ class MainActivity : AppCompatActivity() {
         val hueSeekBar = pickerView.findViewById<SeekBar>(R.id.hue_seekbar)
         val saturationSeekBar = pickerView.findViewById<SeekBar>(R.id.saturation_seekbar)
         val valueSeekBar = pickerView.findViewById<SeekBar>(R.id.value_seekbar)
+        val alphaSeekBar = pickerView.findViewById<SeekBar>(R.id.alpha_seekbar)
         val colorPreview = pickerView.findViewById<View>(R.id.color_picker_preview)
         val colorHexText = pickerView.findViewById<TextView>(R.id.color_hex_text)
 
         val hsv = FloatArray(3)
         Color.colorToHSV(initialColor, hsv)
+        val initialAlpha = Color.alpha(initialColor)
 
         hueSeekBar.max = 360
         saturationSeekBar.max = 100
         valueSeekBar.max = 100
+        alphaSeekBar.max = 100
 
         hueSeekBar.progress = hsv[0].toInt()
         saturationSeekBar.progress = (hsv[1] * 100).toInt()
         valueSeekBar.progress = (hsv[2] * 100).toInt()
+        alphaSeekBar.progress = ((initialAlpha * 100f) / 255f).roundToInt()
 
         fun getSelectedColor(): Int {
+            val alpha = ((alphaSeekBar.progress * 255f) / 100f).roundToInt().coerceIn(0, 255)
             return Color.HSVToColor(
+                alpha,
                 floatArrayOf(
                     hueSeekBar.progress.toFloat(),
                     saturationSeekBar.progress / 100f,
@@ -172,6 +179,7 @@ class MainActivity : AppCompatActivity() {
         hueSeekBar.setOnSeekBarChangeListener(listener)
         saturationSeekBar.setOnSeekBarChangeListener(listener)
         valueSeekBar.setOnSeekBarChangeListener(listener)
+        alphaSeekBar.setOnSeekBarChangeListener(listener)
 
         updateColorPreview()
 

@@ -29,4 +29,5 @@
     <string name="hue_label">Tonalità (Hue)</string>
     <string name="saturation_label">Saturazione</string>
     <string name="value_label">Luminosità</string>
+    <string name="alpha_label">Trasparenza (Alpha)</string>
 </resources>
